@@ -14,15 +14,17 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   Answer *ansy;
 
   /* YOUR CODE HERE */
+  // my code is here... but compiler hates 'undefined references to'... everything...
 
   for (int i =0; i <length; i++) {
     int maxybigdaforce = (limit - weights[i]);
 
-    if(hash_table_retrieve(ht, maxybigdaforce != -1 )) {
+    if(hash_table_retrieve(ht, (maxybigdaforce != -1)) ) {
 
-      if (hash_table_retrieve(ht, maxybigdaforce < i)) {
-        printf('found something...')
+      if (hash_table_retrieve(ht, (maxybigdaforce < i)) ) {
+        printf("found something...%d\n", i);
       }
+
     }
 
   }
