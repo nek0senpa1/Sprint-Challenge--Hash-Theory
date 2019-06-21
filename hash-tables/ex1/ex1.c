@@ -26,17 +26,16 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     int stuff = hash_table_retrieve(ht, weights[i]);
     int thecheck = hash_table_retrieve(ht, stuff);
 
-    printf("the stuff %i \n", stuff);
-    printf("thecheck %d \n", thecheck);
+    // printf("the stuff %i \n", stuff);
+    // printf("thecheck %d \n", thecheck);
 
     if (thecheck != -1) {
-      ansy->index_1 = hash_table_retrieve(index, stuff);
-      ansy->index_2 = hash_table_retrieve(index, (limit - stuff));
-      
+      ansy->index_1 =  hash_table_retrieve(index, (limit - stuff));
+      ansy->index_2 = hash_table_retrieve(index, stuff);
       
 
-      printf("index1: %d \n", ansy->index_1);
-      printf("index2: %d \n", ansy->index_2);
+      // printf("index1: %d \n", ansy->index_1);
+      // printf("index2: %d \n", ansy->index_2);
 
       return ansy;
 
@@ -52,7 +51,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 void print_answer(Answer *answer)
 {
   if (answer != NULL) {
-    printf("Answers: %d %d\n", answer->index_1, answer->index_2);
+    printf("%d %d\n", answer->index_1, answer->index_2);
   } else {
     printf("NULL\n");
   }
