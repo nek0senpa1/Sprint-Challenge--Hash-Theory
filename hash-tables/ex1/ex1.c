@@ -2,15 +2,51 @@
 #include <stdlib.h>
 #include "hashtable.h"
 #include "ex1.h"
+#include <string.h>
+
+// I prefer when the instructs are in the code part, but sure, fine, go ahead and make a full readme ;p
 
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
-
   /* YOUR CODE HERE */
+  // 16 huh... guess it's just a good hexy number
+  HashTable *index = create_hash_table(16);
+
+  Answer *ansy = malloc(sizeof(Answer *));
+
+    
+  for (int i =0; i <length; i++) {
+    int maxybigdaforce = limit - weights[i];
+
+    hash_table_insert(ht, weights[i], maxybigdaforce);
+
+    hash_table_insert(index, weights[i], i);
+
+    int stuff = hash_table_retrieve(ht, weights[i]);
+    int thecheck = hash_table_retrieve(ht, stuff);
+
+    // printf("the stuff %i \n", stuff);
+    // printf("thecheck %d \n", thecheck);
+
+    if (thecheck != -1) {
+      ansy->index_1 =  hash_table_retrieve(index, (limit - stuff));
+      ansy->index_2 = hash_table_retrieve(index, stuff);
+      
+
+      // printf("index1: %d \n", ansy->index_1);
+      // printf("index2: %d \n", ansy->index_2);
+
+      return ansy;
+
+    }
+
+  }
 
   return NULL;
 }
+
+
 
 void print_answer(Answer *answer)
 {
