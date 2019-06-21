@@ -13,7 +13,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   // 16 huh... guess it's just a good hexy number
   HashTable *index = create_hash_table(16);
 
-  Answer *ansy;
+  Answer *ansy = malloc(sizeof(Answer *));
 
     
   for (int i =0; i <length; i++) {
