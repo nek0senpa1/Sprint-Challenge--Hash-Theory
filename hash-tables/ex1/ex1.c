@@ -32,6 +32,8 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     if (thecheck != -1) {
       ansy->index_1 = hash_table_retrieve(index, stuff);
       ansy->index_2 = hash_table_retrieve(index, (limit - stuff));
+      
+      
 
       printf("index1: %d \n", ansy->index_1);
       printf("index2: %d \n", ansy->index_2);
