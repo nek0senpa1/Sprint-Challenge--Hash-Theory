@@ -18,7 +18,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   // my code is here... but compiler hates 'undefined references to'... everything...
 
   for (int i =0; i <length; i++) {
-    int maxybigdaforce = (limit - weights[i]);
+    int maxybigdaforce = limit - weights[i];
 
     hash_table_insert(ht, weights[i], maxybigdaforce);
 
@@ -27,9 +27,14 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     int stuff = hash_table_retrieve(ht, weights[i]);
     int thecheck = hash_table_retrieve(ht, stuff);
 
-    if (thecheck) {
+    printf("the stuff %i \n", stuff);
+    printf("thecheck %d \n", thecheck);
+
+    if (thecheck > -1) {
       ansy->index_1 = hash_table_retrieve(index, stuff);
-      ansy->index_2 = 0;
+      ansy->index_2 = hash_table_retrieve(index, (limit - stuff));
+
+      return ansy;
     }
 
   }
@@ -40,7 +45,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 void print_answer(Answer *answer)
 {
   if (answer != NULL) {
-    printf("%d %d\n", answer->index_1, answer->index_2);
+    printf("Answers: %d %d\n", answer->index_1, answer->index_2);
   } else {
     printf("NULL\n");
   }
