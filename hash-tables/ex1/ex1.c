@@ -12,7 +12,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   // 16 huh... guess it's just a good hexy number
   HashTable *index = create_hash_table(16);
 
-  //Answer *ansy;
+  Answer *ansy;
 
   /* YOUR CODE HERE */
   // my code is here... but compiler hates 'undefined references to'... everything...
@@ -22,9 +22,15 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 
     hash_table_insert(ht, weights[i], maxybigdaforce);
 
-    
+    hash_table_insert(index, weights[i], i);
 
+    int stuff = hash_table_retrieve(ht, weights[i]);
+    int thecheck = hash_table_retrieve(ht, stuff);
 
+    if (thecheck) {
+      ansy->index_1 = hash_table_retrieve(index, stuff);
+      ansy->index_2 = 0;
+    }
 
   }
 
