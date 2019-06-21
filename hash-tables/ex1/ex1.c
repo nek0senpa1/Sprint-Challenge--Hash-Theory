@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "hashtable.h"
 #include "ex1.h"
+#include <string.h>
 
 // I prefer when the instructs are in the code part, but sure, fine, go ahead and make a full readme ;p
 
@@ -11,7 +12,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   // 16 huh... guess it's just a good hexy number
   HashTable *index = create_hash_table(16);
 
-  Answer *ansy;
+  //Answer *ansy;
 
   /* YOUR CODE HERE */
   // my code is here... but compiler hates 'undefined references to'... everything...
@@ -19,13 +20,11 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   for (int i =0; i <length; i++) {
     int maxybigdaforce = (limit - weights[i]);
 
-    if(hash_table_retrieve(ht, (maxybigdaforce != -1)) ) {
+    hash_table_insert(ht, weights[i], maxybigdaforce);
 
-      if (hash_table_retrieve(ht, (maxybigdaforce < i)) ) {
-        printf("found something...%d\n", i);
-      }
+    
 
-    }
+
 
   }
 
