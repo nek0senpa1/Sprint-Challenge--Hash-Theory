@@ -9,14 +9,13 @@
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
+  /* YOUR CODE HERE */
   // 16 huh... guess it's just a good hexy number
   HashTable *index = create_hash_table(16);
 
   Answer *ansy;
 
-  /* YOUR CODE HERE */
-  // my code is here... but compiler hates 'undefined references to'... everything...
-
+    
   for (int i =0; i <length; i++) {
     int maxybigdaforce = limit - weights[i];
 
@@ -30,17 +29,23 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     printf("the stuff %i \n", stuff);
     printf("thecheck %d \n", thecheck);
 
-    if (thecheck > -1) {
+    if (thecheck != -1) {
       ansy->index_1 = hash_table_retrieve(index, stuff);
       ansy->index_2 = hash_table_retrieve(index, (limit - stuff));
 
+      printf("index1: %d \n", ansy->index_1);
+      printf("index2: %d \n", ansy->index_2);
+
       return ansy;
+
     }
 
   }
 
   return NULL;
 }
+
+
 
 void print_answer(Answer *answer)
 {
