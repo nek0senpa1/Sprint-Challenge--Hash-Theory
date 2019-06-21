@@ -3,11 +3,29 @@
 #include "hashtable.h"
 #include "ex1.h"
 
+// I prefer when the instructs are in the code part, but sure, fine, go ahead and make a full readme ;p
+
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
+  // 16 huh... guess it's just a good hexy number
+  HashTable *index = create_hash_table(16);
+
+  Answer *ansy;
 
   /* YOUR CODE HERE */
+
+  for (int i =0; i <length; i++) {
+    int maxybigdaforce = (limit - weights[i]);
+
+    if(hash_table_retrieve(ht, maxybigdaforce != -1 )) {
+
+      if (hash_table_retrieve(ht, maxybigdaforce < i)) {
+        printf('found something...')
+      }
+    }
+
+  }
 
   return NULL;
 }

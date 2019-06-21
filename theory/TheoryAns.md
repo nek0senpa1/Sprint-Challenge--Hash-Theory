@@ -41,9 +41,8 @@ A     B     C     result
 1     1     1       false
 ```
 
-```
-* Actually I did run over to repl.it, and code something up.  In Javascript!  ;p
 
+* Actually I did run over to repl.it, and code something up.  In Javascript!  ;p
 
 <!-- 
 let a =0;
@@ -57,7 +56,7 @@ else {
 	console.log('false');
 }
 -->
-```
+
 
 ## STRETCH GOAL
 
